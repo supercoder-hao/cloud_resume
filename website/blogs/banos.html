@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	https://html5up.net/strata
+	inspired by https://resume.rishab.cloud/
+-->
+<html>
+	<head>
+		<title>Haoxuan Li</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="#" class="image avatar"><img src="../imgs/avatar.jpg" alt="" /></a>
+					<h1><strong>Haoxuan Li </strong><br />
+          A <a span class="auto-type"></span></a></h1>
+
+          <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+          <script>
+            var typed = new Typed('.auto-type', {
+              strings: ['Cloud Engineer'],
+              typeSpeed: 50,
+              backSpeed: 50,
+              loop: false
+            });
+          </script>
+
+				</div>
+			</header>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h2>Campus Restroom Rating Website - Bruin Baño</h2>
+						</header>
+						<p>Written in <strong>HTML</strong> and <strong>CSS</strong> and connected via <strong>Javascript</strong> to a <strong>Firebase</strong> database, Bruin Baños is
+              a web application designed to rank and review restrooms across UCLA’s campus. Students can rate their restroom experiences and submit detailed reviews 
+              for others to see. With Bruin Baños, users gain valuable insights, helping them make informed decisions on the best campus restrooms to use.
+            </p>
+						<ul class="actions">
+							<a href="https://github.com/kyley422/bruin-banos" target="blank" rel="noopener noreferrer" class="button">More Details</a>
+						</ul>
+					</section>
+				
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/haoxuan-li/" class="icon brands fa-linkedin" target="blank" rel="noopener noreferrer"><span class="label">Twitter</span></a></li>
+						<li><a href="https://github.com/supercoder-hao" class="icon brands fa-github" target="blank" rel="noopener noreferrer"><span class="label">Github</span></a></li>
+						<li><a href="mailto:haoxuanlibusiness@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; 2024 Haoxuan Li </br>
+							&#128064; <strong>Views: </strong><span id="quantity">loading...</span></li>
+
+						<script>
+							fetch('https://qlyjjj23ue.execute-api.us-west-1.amazonaws.com/getviews')
+								.then(response => response.json())
+								.then((data) => {
+								document.getElementById('quantity').innerText = data.Count
+								})
+						</script>
+
+						<!-- <li>Design: <a href="http://html5up.net">HTML5 UP</a></li> -->
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.poptrox.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>

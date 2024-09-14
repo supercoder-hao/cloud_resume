@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	https://html5up.net/strata
+	inspired by https://resume.rishab.cloud/
+-->
+<html>
+	<head>
+		<title>Haoxuan Li</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="#" class="image avatar"><img src="../imgs/avatar.jpg" alt="" /></a>
+					<h1><strong>Haoxuan Li </strong><br />
+          A <a span class="auto-type"></span></a></h1>
+
+          <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+          <script>
+            var typed = new Typed('.auto-type', {
+              strings: ['Cloud Engineer'],
+              typeSpeed: 50,
+              backSpeed: 50,
+              loop: false
+            });
+          </script>
+
+				</div>
+			</header>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h2>DeepLearning Vision & Text-Based Product Categorizer</h2>
+						</header>
+						<p>Developed in <strong>Python</strong> using <strong>TensorFlow</strong> and <strong>PyTorch</strong>, 
+							this project explores and compares various <strong>neural network architectures</strong> for Amazon product classification. 
+							The goal is to predict and assign product categories by leveraging both <strong>image recognition</strong> and <strong>text tokenization models</strong>. 
+							We tested multiple neural network designs for each modality, comparing their performance in predicting product categories. The dataset, sourced from publicly available 
+							Amazon descriptions and metadata, was meticulously parsed, split, and cleaned for training and testing. With <u>10 predefined product categories</u>, the project culminated 
+							in an ensemble approach, combining the strengths of both image and text models to optimize prediction accuracy.
+						</p>
+						<ul class="actions">
+							<a href="https://github.com/Ajzboss/amazon-product-classification" target="blank" rel="noopener noreferrer" class="button">More Details</a>
+						</ul>
+					</section>
+				
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/haoxuan-li/" class="icon brands fa-linkedin" target="blank" rel="noopener noreferrer"><span class="label">Twitter</span></a></li>
+						<li><a href="https://github.com/supercoder-hao" class="icon brands fa-github" target="blank" rel="noopener noreferrer"><span class="label">Github</span></a></li>
+						<li><a href="mailto:haoxuanlibusiness@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; 2024 Haoxuan Li </br>
+							&#128064; <strong>Views: </strong><span id="quantity">loading...</span></li>
+
+						<script>
+							fetch('https://qlyjjj23ue.execute-api.us-west-1.amazonaws.com/getviews')
+								.then(response => response.json())
+								.then((data) => {
+								document.getElementById('quantity').innerText = data.Count
+								})
+						</script>
+
+						<!-- <li>Design: <a href="http://html5up.net">HTML5 UP</a></li> -->
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.poptrox.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>
