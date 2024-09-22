@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	https://html5up.net/strata
+	inspired by https://resume.rishab.cloud/
+-->
+<html>
+	<head>
+		<title>Haoxuan Li</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="#" class="image avatar"><img src="../imgs/avatar.jpg" alt="" /></a>
+					<h1><strong>Haoxuan Li </strong><br />
+          A <a span class="auto-type"></span></a></h1>
+
+          <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+          <script>
+            var typed = new Typed('.auto-type', {
+              strings: ['Cloud Engineer'],
+              typeSpeed: 50,
+              backSpeed: 50,
+              loop: false
+            });
+          </script>
+
+				</div>
+			</header>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h2><strong>Building a Serverless Resumé Website Using AWS: A Cloud Engineer's Journey</strong></h2>
+						</header>
+						<p>
+              <strong>tags: HTML, CSS, Javascript, Python, AWS S3, AWS Certificate Manager, AWS CloudFront, AWS Route 53, AWS DynamoDB, AWS API Gateway, AWS Lambda, AWS Identity and Access Management (IAM) </strong><br/><br/>
+
+              Creating a serverless resume website using AWS is an excellent way to showcase both technical skills and an understanding of modern cloud architecture. In this blog, I’ll walk you 
+              through how I built my own resume website using various AWS services—combining scalability, automation, and cost-efficiency, all while adhering to best practices. <br/><br/>
+
+              The goal was simple: host my resume as a static website with dynamic features like a visitor counter, all powered by AWS services. By the end of the project, I had leveraged AWS S3 
+              for static site hosting, CloudFront for distribution, Route 53 for custom domain DNS, DynamoDB as a NoSQL database, and Lambda with API Gateway to handle serverless backend operations. 
+              Here's a detailed breakdown of each step.
+						</p>
+
+            <h3> 1. HTML & CSS: Structuring and Styling the Resume</h3>
+            <p>
+              The foundation of the website was my resume, written entirely in HTML. I focused on clean, semantic markup to ensure the content was well-organized and easy to parse. <br/><br/>
+
+              With the HTML structure in place, I styled the resume using CSS. While I’m not a designer, I aimed for a clean and professional look, using simple typography, margins, 
+              and padding to enhance readability. My goal was to strike a balance between simplicity and elegance. I was able to source an open-source template from HTML5 UP, which I customized to 
+              suit my needs.
+            </p>
+
+            <h3> 2. Hosting the Resume on AWS S3: Static Website Hosting</h3>
+            <p>
+              To host the resume, I turned to Amazon S3. S3 is a great choice for static site hosting, offering high durability and scalability at a minimal cost while remaining serverless. <br/><br/>
+
+              Although the website was now live and could be accessed from an S3 bucket URL, security and performance still needed to be addressed.
+            </p>
+
+            <h3> 3. Securing with HTTPS via AWS CloudFront and AWS Certificate Manager</h3>
+            <p>
+              With the resume live, I needed to ensure it was served securely over HTTPS. I began by obtaining an SSL/TLS certificate from AWS Certificate Manager. This certificate would be used to
+              configure Amazon CloudFront as a content delivery network (CDN) in front of the S3 bucket. 
+              CloudFront not only provided HTTPS but also improved the website’s performance globally through caching.
+            </p>
+
+            <h3> 4. Custom Domain with Amazon Route 53</h3>
+            <p>
+              To give my resume a professional touch, I registered a custom domain and linked it to the CloudFront distribution. Additionally, I employeed subdomain routing to redirect traffic
+              from a simple www. subdomain to resume. subdomain.
+            </p>
+            
+            <h3> 5. Adding a Dynamic Visitor Counter</h3>
+            <p>
+              Next, I wanted to track how many visitors accessed my resume. For this, I implemented a simple visitor counter using JavaScript. The idea was to display the count dynamically on the 
+              webpage. However, I needed a backend to store and manage the visitor data. <br/><br/>
+
+              For the visitor counter backend, I used Amazon DynamoDB, a fully managed NoSQL database. DynamoDB was ideal due to its low-latency performance and pay-per-use pricing model. This database
+              was created with a table with a partition key for storing the visitor count. <br/><br/>
+
+              Rather than communicating directly with DynamoDB from the frontend (which would expose my database), I created a serverless API using AWS API Gateway and AWS Lambda. Here’s the breakdown:
+              <ul>
+                <li>API Gateway: Acted as the front door for the backend, receiving HTTP requests from the JavaScript on the website.</li>
+                <li>AWS Lambda: Handled the logic of reading, updating, and writing visitor data to DynamoDB.</li>
+              </ul>
+              For the Lambda function, I chose Python with the boto3 SDK to interact with DynamoDB. The function was simple: it fetched the current count, incremented it, and stored the updated value.
+              This setup allowed me to keep my architecture serverless, reducing the need for manual server management and ensuring scalability.
+            </p>
+
+            <h3> 6. IAM Permissions for Lambda</h3>
+            <p>
+              To ensure the Lambda function could interact with DynamoDB, I needed to configure the necessary permissions. This was done using AWS Identity and Access Management (IAM). I created a custom
+              IAM role with the required policies to allow the Lambda function to read and write to the DynamoDB table. This role was then attached to the Lambda function, granting it the necessary permissions.
+            </p>
+
+            <h3> 7. Source Control and CI/CD Pipelines</h3>
+            <p>
+              No modern project is complete without version control and continuous deployment. Throughout the project, I maintained version control using Git and GitHub. 
+              This allowed me to track changes, collaborate with others, and roll back to previous versions if needed. <br/><br/>
+
+              For continuous integration and deployment (CI/CD), I used GitHub Actions. This automated the deployment process, ensuring that changes pushed to the main branch were automatically deployed to the S3 bucket.
+              The CI/CD pipeline also ran tests to validate the changes before deployment, reducing the risk of errors in the live environment.
+            </p>
+
+						<ul class="actions">
+              <a href="../index.html" target="blank" rel="noopener noreferrer" class="button">Return Home</a>
+              &nbsp;
+              <a href="https://github.com/supercoder-hao/cloud_resume" target="blank" rel="noopener noreferrer" class="button">More Details</a>
+						</ul>
+					</section>
+				
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/haoxuan-li/" class="icon brands fa-linkedin" target="blank" rel="noopener noreferrer"><span class="label">Twitter</span></a></li>
+						<li><a href="https://github.com/supercoder-hao" class="icon brands fa-github" target="blank" rel="noopener noreferrer"><span class="label">Github</span></a></li>
+						<li><a href="mailto:haoxuanlibusiness@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; 2024 Haoxuan Li </br>
+							&#128064; <strong>Views: </strong><span id="quantity">loading...</span></li>
+
+						<script>
+							fetch('https://qlyjjj23ue.execute-api.us-west-1.amazonaws.com/getviews')
+								.then(response => response.json())
+								.then((data) => {
+								document.getElementById('quantity').innerText = data.Count
+								})
+						</script>
+
+						<!-- <li>Design: <a href="http://html5up.net">HTML5 UP</a></li> -->
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.poptrox.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>
